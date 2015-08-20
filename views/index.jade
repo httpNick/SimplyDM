@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .home
+    h1 SimplyDM
+    p SimplyDM is a service devoted to providing no-shit deathmatching servers for Counter-Strike: Global Offensive. We're tired of skin changing plugins, awful chat colours, and 'HEADSHOT' bellowing down your ears. We provide simple, 128-tick, down to earth servers where you can focus on training your aim, and flexing your flick-shots.
+    
+    if username 
+      a(href='/account') Welcome #{username}
+    else
+      div
+        a(href='/auth/steam')
+          img(src='https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png')

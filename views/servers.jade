@@ -1,0 +1,26 @@
+extends layout
+
+mixin server(hostname, map, players, location, online)
+  tr(align="center")
+    td #[a(href='#')=hostname]
+    td(align="left")=map
+    td #{players}/16
+    td=location
+    td(align='center' class='#{online}')
+
+block content  
+
+  table(style='padding-top: 20px')
+      thead
+        tr
+          th(width='300') Hostname
+          th(width='175' align="left") Map
+          th(width='200') Users
+          th(width='25') Location
+          th(width='150') Status
+      tbody
+        +server('uk-1.simplydm.com', 'de_dust2', 14, 'Lon', 'online')
+        +server('eu-1.simplydm.com', 'de_dust2', 10, 'DE', 'online')
+        +server('eu-2.simplydm.com', 'de_mirage', 14, 'FR', 'online')
+        +server('us-1.simplydm.com', 'aim_redline', 14, 'NY', 'offline')
+        +server('us-1.simplydm.com', 'awp_india', 14, 'SF', 'offline')

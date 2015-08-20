@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Start subscribing today to reap the benefits #{test}
+  form(id='checkout' method='post' action='/checkout')
+    label Donate £2/$3/€2.84 a month
+    div(id='dropin' class='form-group')
+    
+    input(type='submit' value='subscribe')
+  script(src="https://js.braintreegateway.com/v2/braintree.js")
+  script.
+    braintree.setup('!{token}', 'dropin', {
+      container: 'dropin'
+    })
+  

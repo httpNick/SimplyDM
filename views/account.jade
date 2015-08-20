@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 #{account.displayname}'s account
+  img(src='#{account.avatar}')
+  p SteamID: #[a(href='https://steamcommunity.com/profiles/#{account.steamid}') #{account.steamid}]
+  h2 Manage your subscriptions:
+    div.subscriptions
+    

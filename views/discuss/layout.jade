@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title SimplyDM - Discussion
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/fonts/stylesheet.css')
+    
+  body
+    .nav
+      a(href='/' class=(home ? 'hide': '')) [Return Home]
+      a(href='/logout' style="float: right" class=(signedIn ? '': 'hide')) [Logout]
+      a(href='/servers' style="float: right") [Servers]
+      a(href='/faq' style="float: right") [FAQ]
+      
+    block content

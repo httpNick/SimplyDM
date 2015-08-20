@@ -1,0 +1,37 @@
+extends ../layout
+
+mixin server(hostname, map, players, location, online)
+  tr(align="center")
+    td #[a(href='steam://connect/#{hostname}.simplydm.com:27015') #{hostname}.simplydm.com]
+    td(align="left")=map
+    td #{players}/16
+    td=location
+    if (online)
+      td(align='center' class='online')
+    else
+      td(align='center' class='offline')
+
+block content  
+
+  table(style='padding-top: 20px')
+      thead
+        tr
+          th(width='300') Hostname
+          th(width='175' align="left") Map
+          th(width='200') Users
+          th(width='25') Location
+          th(width='150') Status
+      tbody
+        +server('uk-1', 'de_dust2', '--', 'Lon', true)
+    h3(style="padding-top:20px") Being built:
+  table(style='padding-top: 5px')
+      thead
+        tr
+          th(width='300') Hostname
+          th(width='175' align="left") Map
+          th(width='200') Users
+          th(width='25') Location
+          th(width='150') Status
+      tbody
+        +server('eu-1', '--', '--', DE, false)
+        +server('eu-2', '--', '--', FR, false)

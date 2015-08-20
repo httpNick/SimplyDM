@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  style input {padding: 5px;margin:10px;}
+  form(method='post' action'/servers/create')
+    input(type='text' name='hostname' placeholder='hostname')
+    input(type='text' name='ip' placeholder='ip')
+    input(type='text' name='port' placeholder='port')
+    input(type='submit' name='Add to server' style='width: 182.5px;text-align: center;')
