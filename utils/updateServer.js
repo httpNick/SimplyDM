@@ -1,6 +1,13 @@
 var Rcon = require('rcon');
-var conn = new Rcon('178.62.84.123', 27015, "s3cur3");
+var config = require('../config.js');
+var conn = new Rcon(config.devserver.ip, 27015, config.devserver.rcon);
 var data = [];
+
+// TODO:
+// Setup up module exports so we return a formatted string with server data
+// Make the server-info lookup recursive, able to grab multiple servers
+//
+//
 
 conn.on('connect', function() {
   console.log("connected!");
